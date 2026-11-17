@@ -123,7 +123,10 @@
         </footer>
     </main>
     <script>
-        var sub = location.origin + "/vless.json";
+        var base = location.href.split("#")[0].split("?")[0];
+        if (/index\.html$/.test(base)) base = base.replace(/index\.html$/, "");
+        if (base.slice(-1) !== "/") base += "/";
+        var sub = base + "vless.json";
         document.getElementById("subUrl").textContent = sub;
         function go(url) {
             var a = document.createElement("a");
