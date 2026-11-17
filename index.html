@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#3a0a16">
+    <meta name="description" content="ZEROPiNG — دریافت کانفیگ Sing-box و Hiddify. اشتراک رایگان و معرفی سرویس VIP.">
+    <meta property="og:title" content="ZEROPiNG | کانفیگ Sing-box">
+    <meta property="og:description" content="افزودن پروفایل ZEROPiNG به Sing-box و Hiddify">
+    <meta property="og:type" content="website">
+    <title>ZEROPiNG | دریافت کانفیگ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --ink: #12060a;
+            --panel: rgba(42, 10, 18, 0.72);
+            --line: rgba(244, 196, 176, 0.16);
+            --ruby: #c81e45;
+            --ruby-deep: #7a1230;
+            --gold: #e4b15a;
+            --cream: #f6efe6;
+            --muted: #cbb4b4;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            font-family: Vazirmatn, sans-serif;
+            color: var(--cream);
+            background:
+                radial-gradient(900px 480px at 80% -10%, rgba(200, 30, 69, 0.45), transparent 60%),
+                radial-gradient(700px 420px at 0% 100%, rgba(122, 18, 48, 0.55), transparent 55%),
+                var(--ink);
+        }
+        .wrap {
+            width: min(440px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 28px 0 48px;
+            display: grid;
+            gap: 16px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 2px 8px;
+        }
+        .mark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .gem {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(145deg, #ff6b8a, var(--ruby) 45%, #4a0818);
+            clip-path: polygon(50% 0, 100% 38%, 78% 100%, 22% 100%, 0 38%);
+            box-shadow: 0 0 18px rgba(200, 30, 69, 0.55);
+        }
+        .mark small { display: block; letter-spacing: 0.22em; color: var(--gold); font-size: 0.62rem; font-weight: 600; }
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 22px 18px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { font-size: 1.55rem; line-height: 1.35; font-weight: 800; }
+        h1 span { color: #ff8aa3; }
+        .lead { margin-top: 8px; color: var(--muted); font-size: 0.95rem; }
+        .note { margin-top: 8px; color: #e7c7c7; font-size: 0.78rem; }
+        .btn {
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            border: 0;
+            border-radius: 16px;
+            padding: 16px 14px;
+            color: white;
+            text-decoration: none;
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff4d6d, var(--ruby) 55%, var(--ruby-deep));
+            box-shadow: 0 12px 30px rgba(200, 30, 69, 0.35);
+        }
+        .btn.wait { filter: grayscale(0.4); cursor: wait; pointer-events: none; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .ghost {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 8px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.03);
+            color: var(--cream);
+            text-decoration: none;
+            font: inherit;
+            font-size: 0.88rem;
+            cursor: pointer;
+        }
+        .status { margin-top: 12px; font-size: 0.8rem; color: var(--gold); text-align: center; }
+        .vip { border-color: rgba(228, 177, 90, 0.35); }
+        .vip h2 { font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+        .vip h2 i { color: var(--gold); }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+        .tags span {
+            font-size: 0.75rem;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: rgba(200, 30, 69, 0.18);
+            color: #ffd0da;
+        }
+        .vip a { color: var(--gold); font-weight: 800; text-decoration: none; }
+        .links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .links a, .apps a {
+            text-decoration: none;
+            color: var(--cream);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 16px 10px;
+            text-align: center;
+            background: rgba(255,255,255,0.03);
+        }
+        .links i, .apps i { display: block; font-size: 1.25rem; margin-bottom: 6px; color: #ff8aa3; }
+        .apps { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .apps p { grid-column: 1 / -1; text-align: center; color: var(--muted); font-size: 0.85rem; }
+        footer { text-align: center; color: #8d7070; font-size: 0.78rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        .toast {
+            position: fixed;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #3a1020;
+            border: 1px solid var(--gold);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 999px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.25s ease;
+        }
+        .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <header>
+            <div class="mark">
+                <div class="gem" aria-hidden="true"></div>
+                <div>ZEROPiNG<small>RUBY</small></div>
+            </div>
+        </header>
+
+        <section class="panel">
+            <h1>کانفیگ <span>ZEROPiNG</span></h1>
+            <p class="lead">پروفایل آماده برای Sing-box و Hiddify.</p>
+            <p class="note">اگر خودش اضافه نشد، دکمه افزودن را بزنید.</p>
+            <a class="btn wait" id="importBtn" href="#">
+                <i class="fa-solid fa-gem"></i>
+                <span id="importLabel">در حال آماده‌سازی…</span>
+            </a>
+            <div class="row">
+                <a class="ghost" id="hiddifyBtn" href="#"><i class="fa-solid fa-shield-halved"></i> Hiddify</a>
+                <button class="ghost" id="copyBtn" type="button"><i class="fa-solid fa-copy"></i> کپی لینک</button>
+            </div>
+            <p class="status" id="status">چند لحظه صبر کنید.</p>
+        </section>
+
+        <section class="panel vip">
+            <h2><i class="fa-solid fa-crown"></i> سرویس‌های VIP اختصاصی</h2>
+            <p class="lead">برای پلن اختصاصی، پینگ پایین و پشتیبانی مستقیم:</p>
+            <div class="tags">
+                <span>پینگ پایین</span>
+                <span>IP ثابت</span>
+                <span>بدون قطعی</span>
+                <span>پشتیبانی</span>
+            </div>
+            <a href="https://t.me/ZEROPiNG_ch" target="_blank" rel="noopener">مشاهده و خرید در تلگرام ←</a>
+        </section>
+
+        <nav class="links" aria-label="ارتباط">
+            <a href="https://t.me/ZEROPiNG_ch" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram"></i> کانال تلگرام
+            </a>
+            <a href="https://github.com/021ZERO" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> گیت‌هاب
+            </a>
+        </nav>
+
+        <section class="panel">
+            <div class="apps">
+                <p>کلاینت ندارید؟</p>
+                <a href="https://apps.apple.com/app/sing-box-vt/id6673731168" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-apple"></i> iOS
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=io.nekohasekai.sfa" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-android"></i> Android
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            ZEROPiNG · <a href="https://t.me/ZEROPiNG_ch">@ZEROPiNG_ch</a>
+            · <a href="https://github.com/021ZERO/ZEROPiNG-config">سورس</a>
+        </footer>
+    </main>
+    <div class="toast" id="toast">لینک اشتراک کپی شد</div>
+    <script>
+        const sub = "https://raw.githubusercontent.com/021ZERO/ZEROPiNG-config/main/lite/subscriptions/singbox/vless.json";
+        const singbox = "sing-box://import-remote-profile?url=" + encodeURIComponent(sub) + "#" + encodeURIComponent("ZEROPiNG");
+        const hiddify = "hiddify://install-config?url=" + encodeURIComponent(sub) + "#" + encodeURIComponent("ZEROPiNG");
+        const importBtn = document.getElementById("importBtn");
+        const hiddifyBtn = document.getElementById("hiddifyBtn");
+        importBtn.href = singbox;
+        hiddifyBtn.href = hiddify;
+        setTimeout(() => {
+            importBtn.classList.remove("wait");
+            document.getElementById("importLabel").textContent = "افزودن به Sing-box";
+            document.getElementById("status").textContent = "اگر خودکار وارد نشد، روی دکمه بزنید.";
+            location.href = singbox;
+        }, 1600);
+        document.getElementById("copyBtn").addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(sub);
+            } catch (e) {
+                const t = document.createElement("textarea");
+                t.value = sub;
+                document.body.appendChild(t);
+                t.select();
+                document.execCommand("copy");
+                t.remove();
+            }
+            const toast = document.getElementById("toast");
+            toast.classList.add("on");
+            setTimeout(() => toast.classList.remove("on"), 1800);
+        });
+    </script>
+</body>
+</html>
