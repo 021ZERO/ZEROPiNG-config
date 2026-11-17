@@ -1,166 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#3a0a16">
-    <meta name="description" content="ZEROPiNG — دریافت کانفیگ Sing-box و Hiddify">
-    <title>ZEROPiNG | دریافت کانفیگ</title>
-    <style>
-        :root {
-            --ink: #12060a;
-            --panel: rgba(42, 10, 18, 0.78);
-            --line: rgba(244, 196, 176, 0.18);
-            --ruby: #c81e45;
-            --gold: #e4b15a;
-            --cream: #f6efe6;
-            --muted: #cbb4b4;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            min-height: 100vh;
-            font-family: Tahoma, "Segoe UI", sans-serif;
-            color: var(--cream);
-            background:
-                radial-gradient(900px 480px at 85% -10%, rgba(200, 30, 69, 0.42), transparent 60%),
-                radial-gradient(700px 420px at 0% 110%, rgba(122, 18, 48, 0.6), transparent 55%),
-                var(--ink);
-        }
-        .wrap {
-            width: min(440px, calc(100% - 28px));
-            margin: 0 auto;
-            padding: 28px 0 40px;
-            display: grid;
-            gap: 14px;
-        }
-        .mark { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.08em; }
-        .gem {
-            width: 32px; height: 32px;
-            background: linear-gradient(145deg, #ff6b8a, var(--ruby) 48%, #4a0818);
-            clip-path: polygon(50% 0, 100% 38%, 78% 100%, 22% 100%, 0 38%);
-        }
-        .mark small { display: block; letter-spacing: 0.2em; color: var(--gold); font-size: 11px; }
-        .panel {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: 22px;
-            padding: 20px 16px;
-        }
-        h1 { font-size: 1.45rem; line-height: 1.4; }
-        h1 span { color: #ff8aa3; }
-        .lead { margin-top: 8px; color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
-        button, .btn {
-            display: flex; align-items: center; justify-content: center;
-            width: 100%; margin-top: 16px; border: 0; border-radius: 16px;
-            padding: 15px 12px; color: white; font: inherit; font-weight: 800;
-            cursor: pointer; text-decoration: none;
-            background: linear-gradient(135deg, #ff4d6d, var(--ruby) 55%, #7a1230);
-        }
-        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .ghost {
-            margin-top: 0; background: transparent; color: var(--cream);
-            border: 1px solid var(--line); font-weight: 600; font-size: 0.9rem;
-        }
-        .url {
-            margin-top: 12px; padding: 10px; border-radius: 12px;
-            background: rgba(0,0,0,0.28); color: #f3d5dc;
-            font-size: 12px; line-height: 1.6; word-break: break-all; direction: ltr; text-align: left;
-        }
-        .status { margin-top: 10px; min-height: 1.2em; text-align: center; color: var(--gold); font-size: 0.82rem; }
-        .vip { border-color: rgba(228, 177, 90, 0.4); }
-        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
-        .tags span {
-            font-size: 12px; padding: 4px 9px; border-radius: 999px;
-            background: rgba(200, 30, 69, 0.2); color: #ffd0da;
-        }
-        .vip a { color: var(--gold); font-weight: 800; text-decoration: none; }
-        .links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .links a {
-            text-decoration: none; color: var(--cream); text-align: center;
-            border: 1px solid var(--line); border-radius: 16px; padding: 16px 8px;
-            background: rgba(255,255,255,0.03);
-        }
-        footer { text-align: center; color: #8d7070; font-size: 12px; }
-        footer a { color: var(--gold); text-decoration: none; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#300914">
+<title>ZEROPiNG | افزودن کانفیگ</title>
+<style>
+:root{color-scheme:dark;--bg:#10050a;--panel:#2a0b16;--line:#713044;--ruby:#d92752;--gold:#edc071;--txt:#fff1f1;--muted:#d3b8c0}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% 0,#64142d 0,transparent 48%),radial-gradient(ellipse at 0 100%,#3b0c20 0,transparent 45%),var(--bg);color:var(--txt);font-family:Tahoma,Arial,sans-serif}
+main{width:min(460px,calc(100% - 28px));margin:auto;padding:30px 0 40px;display:grid;gap:15px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:2px}.gem{width:34px;height:34px;background:linear-gradient(140deg,#ff9aaf,var(--ruby),#650b25);clip-path:polygon(50% 0,100% 38%,78% 100%,22% 100%,0 38%)}.brand small{display:block;color:var(--gold);font-size:10px;letter-spacing:4px;margin-top:4px}
+.card{background:rgba(42,11,22,.88);border:1px solid var(--line);border-radius:22px;padding:21px 17px;box-shadow:0 16px 45px #0005}
+h1{font-size:23px;margin:0 0 9px}h1 span{color:#ff829e}h2{font-size:19px;margin:0 0 8px}
+p{color:var(--muted);font-size:14px;line-height:1.9;margin:0}
+.action{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;min-height:52px;margin-top:15px;padding:13px;border:0;border-radius:15px;background:linear-gradient(130deg,#fa587a,#bd173f 65%,#77102d);color:white;text-decoration:none;font:inherit;font-weight:800;cursor:pointer}
+.secondary{background:transparent;border:1px solid var(--line);color:var(--txt);margin-top:10px}
+.url{direction:ltr;text-align:left;overflow-wrap:anywhere;background:#10060b;border:1px solid #512035;border-radius:12px;padding:11px;margin-top:13px;color:#f5cbd5;font:12px/1.7 monospace}
+.status{min-height:22px;margin-top:10px;text-align:center;color:var(--gold);font-size:12px}
+.note{font-size:12px;margin-top:12px;color:#c8aab4}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.tags span{font-size:12px;background:#64152c;border-radius:99px;padding:6px 10px;color:#ffd8e0}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}.links a{display:block;text-align:center;text-decoration:none;color:var(--txt);border:1px solid var(--line);border-radius:14px;padding:15px 8px;background:#ffffff08;font-size:13px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+footer{text-align:center;color:#9c7b86;font-size:12px}footer a{color:var(--gold);text-decoration:none}
+</style>
 </head>
 <body>
-    <main class="wrap">
-        <div class="mark"><div class="gem"></div><div>ZEROPiNG<small>RUBY</small></div></div>
+<main>
+  <div class="brand"><div class="gem"></div><div>ZEROPiNG<small>RUBY CONFIG</small></div></div>
 
-        <section class="panel">
-            <h1>کانفیگ <span>ZEROPiNG</span></h1>
-            <p class="lead">این صفحه خودش باز می‌ماند. برای ورود کانفیگ یکی از دکمه‌ها را بزنید.</p>
-            <button id="singbox" type="button">افزودن به Sing-box</button>
-            <div class="row">
-                <button class="ghost" id="hiddify" type="button">Hiddify</button>
-                <button class="ghost" id="copy" type="button">کپی لینک</button>
-            </div>
-            <div class="url" id="subUrl"></div>
-            <p class="status" id="status"></p>
-        </section>
+  <section class="card">
+    <h1>افزودن کانفیگ <span>ZEROPiNG</span></h1>
+    <p>برای وارد کردن اشتراک، دکمه زیر را بزن. لینک مخصوص واردکردن پروفایل Sing-box برای iPhone و Android است.</p>
 
-        <section class="panel vip">
-            <h2>سرویس‌های VIP اختصاصی</h2>
-            <p class="lead">پلن اختصاصی، پینگ پایین و پشتیبانی مستقیم از کانال.</p>
-            <div class="tags">
-                <span>پینگ پایین</span>
-                <span>IP ثابت</span>
-                <span>بدون قطعی</span>
-                <span>پشتیبانی</span>
-            </div>
-            <a href="https://t.me/ZEROPiNG_ch">مشاهده و خرید در تلگرام</a>
-        </section>
+    <a class="action" id="openSingbox" href="#">باز کردن در Sing-box</a>
+    <button class="action secondary" id="copyUrl" type="button">کپی لینک اشتراک</button>
 
-        <nav class="links">
-            <a href="https://t.me/ZEROPiNG_ch">کانال تلگرام<br>@ZEROPiNG_ch</a>
-            <a href="https://github.com/021ZERO">گیت‌هاب<br>021ZERO</a>
-        </nav>
+    <div class="url" id="subscriptionUrl"></div>
+    <div class="status" id="status" aria-live="polite"></div>
+    <p class="note">اگر برنامه باز نشد، لینک اشتراک را کپی کن و داخل Sing-box از بخش Profiles یک Remote Profile بساز و لینک را در قسمت URL قرار بده.</p>
+  </section>
 
-        <footer>
-            ZEROPiNG · <a href="https://t.me/ZEROPiNG_ch">@ZEROPiNG_ch</a>
-            · <a href="https://github.com/021ZERO/ZEROPiNG-config">سورس</a>
-        </footer>
-    </main>
-    <script>
-        var base = location.href.split("#")[0].split("?")[0];
-        if (/index\.html$/.test(base)) base = base.replace(/index\.html$/, "");
-        if (base.slice(-1) !== "/") base += "/";
-        var sub = base + "vless.json";
-        document.getElementById("subUrl").textContent = sub;
-        function go(url) {
-            var a = document.createElement("a");
-            a.href = url;
-            a.style.display = "none";
-            document.body.appendChild(a);
-            a.click();
-        }
-        document.getElementById("singbox").onclick = function () {
-            document.getElementById("status").textContent = "در حال باز کردن Sing-box…";
-            go("sing-box://import-remote-profile?url=" + encodeURIComponent(sub) + "#ZEROPiNG");
-        };
-        document.getElementById("hiddify").onclick = function () {
-            document.getElementById("status").textContent = "در حال باز کردن Hiddify…";
-            go("hiddify://install-config?url=" + encodeURIComponent(sub) + "#ZEROPiNG");
-        };
-        document.getElementById("copy").onclick = function () {
-            var done = function () { document.getElementById("status").textContent = "لینک اشتراک کپی شد"; };
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(sub).then(done).catch(function () {
-                    fallback();
-                });
-            } else fallback();
-            function fallback() {
-                var t = document.createElement("textarea");
-                t.value = sub;
-                document.body.appendChild(t);
-                t.select();
-                try { document.execCommand("copy"); done(); } catch (e) {
-                    document.getElementById("status").textContent = "کپی نشد؛ لینک بالا را دستی بردارید";
-                }
-                t.remove();
-            }
-        };
-    </script>
+  <section class="card">
+    <h2>پشتیبانی و اطلاع‌رسانی</h2>
+    <p>برای راهنمایی و اطلاع از به‌روزرسانی‌ها به کانال رسمی ZEROPiNG سر بزن.</p>
+    <div class="tags"><span>ZEROPiNG</span><span>پشتیبانی تلگرام</span></div>
+    <a class="action" href="https://t.me/ZEROPiNG_ch" target="_blank" rel="noopener">ورود به کانال تلگرام</a>
+  </section>
+
+  <nav class="links">
+    <a href="https://t.me/ZEROPiNG_ch" target="_blank" rel="noopener">تلگرام<br>@ZEROPiNG_ch</a>
+    <a href="https://github.com/021ZERO/ZEROPiNG-config" target="_blank" rel="noopener">مخزن گیت‌هاب<br>ZEROPiNG-config</a>
+  </nav>
+  <footer>ZEROPiNG · <a href="https://github.com/021ZERO/ZEROPiNG-config">GitHub</a></footer>
+</main>
+<script>
+(function () {
+  "use strict";
+  var subscription = "https://raw.githubusercontent.com/021ZERO/ZEROPiNG-config/main/lite/subscriptions/singbox/vless.json";
+  var importLink = "sing-box://import-remote-profile?url=" + encodeURIComponent(subscription) + "#ZEROPiNG";
+  var openLink = document.getElementById("openSingbox");
+  var status = document.getElementById("status");
+
+  // A real anchor click is more reliable than creating a hidden anchor or
+  // navigating from an asynchronous callback; it preserves the user's gesture.
+  openLink.href = importLink;
+  document.getElementById("subscriptionUrl").textContent = subscription;
+
+  openLink.addEventListener("click", function () {
+    status.textContent = "درخواست باز کردن Sing-box ارسال شد…";
+  });
+
+  document.getElementById("copyUrl").addEventListener("click", async function () {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(subscription);
+      } else {
+        var el = document.createElement("textarea");
+        el.value = subscription;
+        el.setAttribute("readonly", "");
+        el.style.position = "fixed";
+        el.style.opacity = "0";
+        document.body.appendChild(el);
+        el.select();
+        var ok = document.execCommand("copy");
+        el.remove();
+        if (!ok) throw new Error("clipboard unavailable");
+      }
+      status.textContent = "لینک اشتراک کپی شد.";
+    } catch (e) {
+      status.textContent = "کپی خودکار ممکن نشد؛ لینک نمایش‌داده‌شده را دستی کپی کن.";
+    }
+  });
+})();
+</script>
 </body>
 </html>
